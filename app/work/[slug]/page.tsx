@@ -65,6 +65,6 @@ export default async function StudyPage({params}:{params:Promise<{slug:string}>}
     <section className="case-stats shell">{study.stats.map(s=><div key={s.label}><strong>{s.value}</strong><span>{s.label}</span></div>)}</section>
     <section className="flow-wrap shell"><p className="label">The system, at a glance</p><div className="flow">{study.flow.map((item,i)=><div key={item}><span>{String(i+1).padStart(2,"0")}</span><b>{item}</b></div>)}</div></section>
     <section className="story shell">{study.sections.map((section,i)=><article key={section.title}><p className="story-no">{String(i+1).padStart(2,"0")}</p><div><h2>{section.title}</h2><p>{section.body}</p>{section.bullets&&<ul>{section.bullets.map(b=><li key={b}>{b}</li>)}</ul>}</div></article>)}</section>
-    <section className="next"><Link href={`/work/${study.next}`}><span>Next project</span><strong>{studies[study.next!].title} ↗</strong></Link></section>
+    <section className="next"><a href={`/work/${study.next}`}><span>Next project</span><strong>{studies[study.next!].title} ↗</strong></a></section>
   </main>
 }
