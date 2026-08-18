@@ -1,73 +1,56 @@
 import Link from "next/link";
 
+const experience = [
+  { company: "EY", role: "Manager, AI & Data", period: "Aug 2024–Present", copy: "I lead enterprise GenAI work from discovery and solution design through delivery. My recent work includes a multi-agent platform spanning four use cases, an AI-first catalogue product, and reusable frameworks that helped another team reduce delivery time from 12 weeks to four." },
+  { company: "ProjectHero", role: "Product Lead", period: "Jan–Jun 2023", copy: "I led the roadmap across product, design and engineering. We shipped ML-assisted order creation that reduced processing time by 87%, improved contractor onboarding completion from 4% to 53%, and launched contractor discovery." },
+  { company: "Jar", role: "Product Manager", period: "Jan–Aug 2022", copy: "I worked on growth and transaction reliability for a consumer savings product. Data-led experiments increased transactions by 10%, while changes to the gold-selling journey reduced support tickets by 15%." },
+  { company: "DeepConverse", role: "Product & Data Science Lead", period: "Jun 2019–Dec 2021", copy: "I worked across product and data science on customer-support tools. I launched a no-code chatbot platform that reduced support tickets by 50% and built a code-free ML dashboard for training and analysing models." },
+  { company: "Botspace", role: "Product & Data Science", period: "Jan–May 2019", copy: "I built chatbots using Rasa and Elasticsearch and turned client requirements into product roadmaps. A multi-template approach reduced the steps required to create a chatbot by half." },
+  { company: "Egregore Labs", role: "Data Scientist", period: "Jan–Dec 2018", copy: "I worked on AI products for news analysis and personalised timelines. The work included recommendation, spam classification and retention-focused products used by real readers." },
+  { company: "SeenIt.in", role: "Data Scientist", period: "Jun–Dec 2017", copy: "I began my career building recommendation and computer-vision systems for fashion discovery. The recommendation work increased retention by 15%, while automated clothing tags made post creation three times faster." },
+];
+
 const projects = [
-  { index: "01", title: "Enterprise agentic platform", proof: "Leadership · Enterprise delivery", line: "Led a five-person team to deploy four enterprise use cases—and built the reusable framework that helped cut the next delivery cycle from 12 weeks to four.", role: "Product vision · Architecture · Scope · Client leadership", status: "Deployed · Client work anonymised", href: "/work/agentic-platform", tone: "ink" },
-  { index: "02", title: "José", proof: "Agent architecture · Independent build", line: "A coding-agent harness that makes permission, isolation, verification and human review part of the architecture—not footnotes.", role: "Concept · Architecture · Implementation", status: "Working core · In active development", href: "/work/jose", tone: "acid" },
-  { index: "03", title: "Tandem", proof: "Product judgement · Independent build", line: "A household-finance POC built for two people who share a life—but not necessarily the same spending habits.", role: "Product · Design · Full-stack build", status: "Working POC · Used at home", href: "/work/tandem", tone: "coral" },
-];
-
-const proof = [
-  { value: "8+", label: "years", detail: "Across AI architecture, product management and data science" },
-  { value: "5", label: "person team", detail: "Led through architecture and enterprise delivery" },
-  { value: "4", label: "use cases", detail: "Deployed on one reusable multi-agent platform" },
-  { value: "12→4", label: "weeks", detail: "Subsequent delivery enabled by reusable frameworks" },
-];
-
-const operatingModel = [
-  { index: "01", title: "Discover", copy: "Find the business problem where AI can create measurable value." },
-  { index: "02", title: "Shape", copy: "Turn an opportunity into a product, scope and credible business case." },
-  { index: "03", title: "Architect", copy: "Design for reliability, security, evaluation and reuse from the start." },
-  { index: "04", title: "Deliver", copy: "Lead the build, stakeholder decisions and handover into the real world." },
-];
-
-const capabilities = [
-  { title: "AI architecture", items: "Multi-agent systems · RAG · Agent evaluation · Memory · RBAC · NL2SQL" },
-  { title: "Product & commercial", items: "Discovery · Solution design · POCs · Proposals · Roadmaps · ROI" },
-  { title: "Leadership", items: "Product vision · Team delivery · Client communication · Scope · Stakeholder alignment" },
-  { title: "Platforms & technology", items: "Python · FastAPI · React · LangGraph · Databricks · Azure · PostgreSQL · Supabase" },
+  { title: "Enterprise agentic platform", status: "Deployed · Client work anonymised", copy: "I led a five-person team that delivered four AI use cases for one business function over six months. The work covered product scope, architecture, stakeholder management, evaluation and handover to the client’s technology team.", href: "/work/agentic-platform" },
+  { title: "José", status: "Working core · In active development", copy: "José is a coding-agent harness I am building to understand what sits around the model: permissions, isolation, retries, verification and human review. It can take an authorised GitHub issue and work toward a tested pull request inside a container.", href: "/work/jose" },
+  { title: "Tandem", status: "Working POC · Used at home", copy: "Tandem is a household-finance product I built for my wife and me. We use it to log expenses, understand what is safe to spend, and be more deliberate about money without following a rigid daily budget.", href: "/work/tandem" },
 ];
 
 export default function Home() {
   return <main>
     <header className="nav shell">
       <Link className="brand" href="/" aria-label="Ronak Tanna, home">Ronak Tanna<span>.</span></Link>
-      <nav aria-label="Primary navigation">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a>
-        <a href="/Ronak_Tanna_Resume.pdf" target="_blank" rel="noreferrer">Résumé ↗</a>
-      </nav>
+      <nav aria-label="Primary navigation"><a href="#about">About</a><a href="#overview">Overview</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="/Ronak_Tanna_Resume.pdf" target="_blank" rel="noreferrer">Résumé ↗</a></nav>
     </header>
 
-    <section className="hero shell">
-      <div className="hero-label"><p className="kicker"><span /> AI Solutions Architect & Product Leader</p><p className="location">Bangalore, India</p></div>
-      <h1>I turn ambitious<br />AI ideas into<br /><em>systems that work.</em></h1>
-      <div className="hero-bottom">
-        <div className="hero-intro"><p>I take AI systems from discovery and architecture through delivery—connecting business value, product judgement and reliable technical execution.</p><span>8+ years across AI, product and data science · Manager, AI & Data at EY</span></div>
-        <div className="hero-actions"><a className="button button-dark" href="mailto:ronak.tanna@gmail.com">Start a conversation ↗</a><a className="text-link" href="#work">See selected work ↓</a></div>
-      </div>
+    <section className="simple-hero shell">
+      <p className="kicker"><span /> AI Solutions Architect & Product Leader</p>
+      <h1>I work on AI products from the first conversation through to production.</h1>
+      <div className="simple-hero-copy"><p>I’m based in Bangalore and currently work as a Manager in AI & Data at EY. I help teams decide where AI is useful, shape the product and architecture, and work with engineers to deliver it.</p><div className="simple-actions"><a href="mailto:ronak.tanna@gmail.com">Email me ↗</a><a href="https://www.linkedin.com/in/ronaktanna/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/fearfulsteel420" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
     </section>
 
-    <section className="career-proof" aria-label="Career highlights">
-      <div className="shell proof-intro"><p className="label">Evidence, not adjectives</p><p>Enterprise delivery with enough product instinct to ask whether the system should exist in the first place.</p></div>
-      <div className="shell proof-cards">{proof.map((item) => <div className="proof-card" key={item.value}><strong>{item.value}</strong><span>{item.label}</span><p>{item.detail}</p></div>)}</div>
+    <section id="about" className="simple-section about-simple"><div className="shell simple-grid"><p className="label">About</p><div className="prose-large">
+      <p>I started my career as a data scientist, building recommendation, computer-vision and natural-language systems. Over time I became more interested in the product decisions around the model: which problem to solve, how people would use the result, and whether it would create enough value to justify building.</p>
+      <p>That led me into product management and eventually into AI solution architecture. Today my work covers discovery, product definition, architecture and delivery, often with the same client and team from the first workshop to handover.</p>
+      <p>I also build independent products because it keeps me close to the details. José lets me explore coding-agent systems, while Tandem gives me a real household problem against which to test product decisions.</p>
+    </div></div></section>
+
+    <section id="overview" className="simple-section glance shell"><div className="simple-grid"><p className="label">At a glance</p><div>
+      <h2>My career has moved from building models to owning the wider problem.</h2>
+      <div className="glance-facts"><div><strong>8+ years</strong><span>across data science, product and AI delivery</span></div><div><strong>Bangalore</strong><span>working with enterprise and independent teams</span></div><div><strong>Current focus</strong><span>AI architecture, product leadership and delivery</span></div></div>
+      <div className="glance-detail"><article><h3>What I work on</h3><p>Multi-agent systems, RAG, evaluation, memory, permissions, data products and the product decisions that make them useful.</p></article><article><h3>How I contribute</h3><p>Discovery, solution design, product scope, architecture, client communication, team leadership and hands-on technical work.</p></article><article><h3>What I’m exploring</h3><p>Reliable agentic systems, capable smaller models, local-first AI, and products where AI removes meaningful friction.</p></article><article><h3>Tools and platforms</h3><p>Python, FastAPI, React, LangGraph, Databricks, Azure, PostgreSQL and Supabase.</p></article></div>
+    </div></div></section>
+
+    <section id="work" className="simple-section work-history"><div className="shell simple-grid"><div><p className="label">Work</p><p className="section-note">A reverse-chronological view of the teams and products I have worked on.</p></div><div className="roles">
+      {experience.map((item) => <article className="role" key={`${item.company}-${item.period}`}><div><h3>{item.company}</h3><p>{item.role}</p><span>{item.period}</span></div><p>{item.copy}</p></article>)}
+    </div></div></section>
+
+    <section id="projects" className="simple-section project-section shell">
+      <div className="simple-grid project-intro"><p className="label">Projects</p><div><h2>Work that gave me room to go deeper.</h2><p>The enterprise platform shows how I lead delivery with a client and a team. José and Tandem are independent projects where I can follow an idea from first principles and live with the consequences of the product decisions.</p></div></div>
+      <div className="simple-projects">{projects.map((project, index) => <Link href={project.href} className="simple-project" key={project.title}><span>{String(index + 1).padStart(2, "0")}</span><div><p>{project.status}</p><h3>{project.title}</h3><div>{project.copy}</div><b>Read the case study ↗</b></div></Link>)}</div>
+      <div className="other-project simple-grid"><p className="label">Other experiment</p><div><h3>Crumbs</h3><p>I built a working POC that turns books into character-led, multi-voice audio. It ingests an EPUB, adapts the text into a script using an LLM, and produces the result with multiple text-to-speech voices. The experiment is complete for now.</p><span>EPUB ingestion · LLM adaptation · Multi-voice TTS</span></div></div>
     </section>
 
-    <section id="work" className="work shell">
-      <div className="section-head"><p className="label">Selected work</p><div><h2>Three projects.<br /><i>Three reasons to hire me.</i></h2><p className="section-deck">Leadership at enterprise scale, architectural depth in agent systems, and the product judgement to build for a real human problem.</p></div></div>
-      <div className="project-list">{projects.map((project) => <Link key={project.title} href={project.href} className={`project ${project.tone}`}><span className="project-index">{project.index}</span><div className="project-main"><p>{project.proof}</p><h3>{project.title}</h3><span className="project-line">{project.line}</span><div className="project-meta"><span>{project.role}</span><span>{project.status}</span></div></div><b aria-hidden="true">↗</b></Link>)}</div>
-    </section>
-
-    <section className="operating"><div className="shell"><div className="operating-head"><p className="label">How I operate</p><h2>From fuzzy brief<br /><i>to working system.</i></h2></div><div className="operating-grid">{operatingModel.map((item) => <article key={item.title}><span>{item.index}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div></div></section>
-
-    <section id="experience" className="experience shell">
-      <div className="experience-lead"><p className="label">Experience & capabilities</p><h2>A career moving closer to the whole problem.</h2><p>Data science taught me what models can do. Product taught me what people need. Enterprise delivery taught me what it takes to make both survive contact with reality.</p></div>
-      <div className="career-snapshot"><div className="current-role"><span>Current</span><h3>Manager, AI & Data</h3><p>EY · 2024–Present</p><b>AI solutions · Product vision · Architecture · Delivery leadership</b></div><div className="career-arc"><span>Career arc</span><p>Data Scientist</p><i>→</i><p>Product Leader</p><i>→</i><p>AI Solutions Architect</p></div></div>
-      <div className="capability-grid">{capabilities.map((capability) => <article key={capability.title}><h3>{capability.title}</h3><p>{capability.items}</p></article>)}</div>
-    </section>
-
-    <section className="experiment shell"><p className="label">A completed experiment</p><div><span>Curiosity, in working form</span><h2>Crumbs</h2><p>I got bored of podcasts on my morning runs, so I built a working POC that turns books into character-led, multi-voice audio productions. The experiment is complete; the curiosity is not.</p><small>EPUB ingestion · LLM adaptation · Multi-voice TTS</small></div></section>
-
-    <section id="about" className="about"><div className="shell about-grid"><p className="label">A little context</p><div><h2>I sit somewhere between the whiteboard and the terminal.</h2><p>My favourite work starts with an ambiguous business problem and ends with a system people can actually use. I’m most useful where architecture, product judgement and commercial reality need to agree with one another.</p><p>I still build independently because it keeps the gap between having an opinion and testing one pleasantly small.</p><div className="links"><a href="https://www.linkedin.com/in/ronaktanna/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/fearfulsteel420" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/Ronak_Tanna_Resume.pdf" target="_blank" rel="noreferrer">Résumé ↗</a></div></div></div></section>
-
-    <footer className="footer shell"><div><p>Have an ambitious AI problem?</p><h2>Let’s make it<br /><i>less hypothetical.</i></h2></div><div className="footer-actions"><a className="button button-dark" href="mailto:ronak.tanna@gmail.com">ronak.tanna@gmail.com ↗</a><a href="/Ronak_Tanna_Resume.pdf" target="_blank" rel="noreferrer">Download résumé ↗</a></div><small>© 2026 Ronak Tanna · Bangalore, India</small></footer>
+    <footer className="simple-footer shell"><div><h2>If you would like to discuss my work, send me a note.</h2><a href="mailto:ronak.tanna@gmail.com">ronak.tanna@gmail.com ↗</a></div><div className="footer-links"><a href="https://www.linkedin.com/in/ronaktanna/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/fearfulsteel420" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/Ronak_Tanna_Resume.pdf" target="_blank" rel="noreferrer">Résumé ↗</a></div><small>© 2026 Ronak Tanna · Bangalore, India</small></footer>
   </main>;
 }
