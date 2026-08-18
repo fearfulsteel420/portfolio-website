@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "Ronak Tanna — AI Systems, Product Thinking & Strategy";
+const title = "Ronak Tanna — AI Solutions Architect & Product Leader";
 const description =
-  "AI systems, agentic platforms and products built to survive contact with the real world.";
+  "AI Solutions Architect and Product Leader turning ambitious AI ideas into production systems—from discovery and architecture through delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
