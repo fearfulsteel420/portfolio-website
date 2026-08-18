@@ -1,13 +1,12 @@
 services:
   - type: web
     name: ronak-tanna-portfolio
-    runtime: node
+    runtime: static
     plan: free
     branch: main
     buildCommand: npm ci && npm run build
-    startCommand: npm start
+    staticPublishPath: ./out
     autoDeployTrigger: commit
-    healthCheckPath: /
     envVars:
       - key: NODE_VERSION
         value: 22.22.1
